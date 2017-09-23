@@ -77,116 +77,40 @@
     <div id="container">
       <div id="main">
 
-   
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/09/23/jvm/1.1/" title="JVM 学习日志——自动内存管理篇（1）： Java 内存区域" itemprop="url">
+  
+    <h1 itemprop="name">JVM 学习日志——自动内存管理篇（1）： Java 内存区域</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+           <p itemprop="description" >Java 语言体系与其他静态编程语言的区别除了在编译时存在差别（Java 源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在 C 或 C++ 中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后</p>
+        
     
-      <a href="/2017/09/23/jvm/1.1/" title="JVM 学习日志——自动内存管理篇（1）： Java 内存区域" itemprop="url">JVM 学习日志——自动内存管理篇（1）： Java 内存区域</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Cai Pengcheng" target="_blank" itemprop="author">Cai Pengcheng</a>
-		
-  <p class="article-time">
-    <time datetime="2017-09-23T14:43:49.000Z" itemprop="datePublished"> Published 2017-09-23</time>
+    <time datetime="2017-09-23T14:43:49.000Z" itemprop="datePublished">2017-09-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/09/23/hello-world/" title="Hello World" itemprop="url">
+  
+    <h1 itemprop="name">Hello World</h1>
     
-  </p>
-</header>
-    <div class="article-content">
+     
+           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
         
-        <p>Java 语言体系与其他静态编程语言的区别除了在编译时存在差别（Java 源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在 C 或 C++ 中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在 Java 中，这些行为将由 JVM 负责，开发人员不用对内存进行直接操作，这使得内存泄露或内存溢出的问题大为减少。但是，这并不代表问题不会出现，若出现内存泄露或内存溢出的问题时，了解 JVM 的内存机制，对问题进行追踪将不会太过艰难。</p>
-<h1 id="1-内存区域划分"><a href="#1-内存区域划分" class="headerlink" title="1. 内存区域划分"></a>1. 内存区域划分</h1><p><img src="http://owqmfrk1c.bkt.clouddn.com/image/jvm/1.1/1.jpg" alt=" Java 内存区域划分"><br>这是学习 JVM 内存机制的相当著名发一张图了，根据《 Java 虚拟机规范》制定的。接下来简要的描述下这张图的信息。</p>
-<p>在 JVM 运行时的数据区中，共有两大类的运行时数据区，分别为：</p>
-<ul>
-<li>线程共享数据区</li>
-<li>线程隔离数据区</li>
-</ul>
-<p>如上图所示，线程共享数据区有两个内存区域（方法区和堆），线程隔离数据区则有三个内存区域（程序计数器、虚拟机栈和本地方法栈）。</p>
-<h2 id="1-方法区-Method-Area"><a href="#1-方法区-Method-Area" class="headerlink" title="(1). 方法区(Method Area)"></a>(1). 方法区(Method Area)</h2><p>“它用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。”这是周志明在《深入理解 Java 虚拟机》中说的一句话，概括得很好，对于我来说，对这个的内存区域作用感觉一目了然。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/09/23/hello-world/" title="Hello World" itemprop="url">Hello World</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Cai Pengcheng" target="_blank" itemprop="author">Cai Pengcheng</a>
-		
-  <p class="article-time">
-    <time datetime="2017-09-23T08:24:13.432Z" itemprop="datePublished"> Published 2017-09-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
+    <time datetime="2017-09-23T08:24:13.432Z" itemprop="datePublished">2017-09-23</time>
+  </a>
+</section>
 
 
 
