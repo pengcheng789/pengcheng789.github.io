@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | Pengcheng&#39;s Blog</title>
+    <title>JVM 学习日志—— 自动内存管理篇(1)：Java 内存区域 | Pengcheng&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Cai Pengcheng">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="Java 语言体系与其他静态编程语言的区别除了在编译时存在差别（Java 源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在 C 或 C++ 中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在 Java 中，这些行为将由 JVM 负责，开发人员不用对内存进行直接操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://pengcheng789.github.io/2017/09/23/hello-world/index.html">
+<meta property="og:title" content="JVM 学习日志—— 自动内存管理篇(1)：Java 内存区域">
+<meta property="og:url" content="https://pengcheng789.github.io/2017/09/23/jvm/jvm.1.1/index.html">
 <meta property="og:site_name" content="Pengcheng&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Java 语言体系与其他静态编程语言的区别除了在编译时存在差别（Java 源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在 C 或 C++ 中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在 Java 中，这些行为将由 JVM 负责，开发人员不用对内存进行直接操作">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2017-09-23T08:24:13.432Z">
+<meta property="og:updated_time" content="2017-09-23T13:32:11.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="JVM 学习日志—— 自动内存管理篇(1)：Java 内存区域">
+<meta name="twitter:description" content="Java 语言体系与其他静态编程语言的区别除了在编译时存在差别（Java 源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在 C 或 C++ 中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在 Java 中，这些行为将由 JVM 负责，开发人员不用对内存进行直接操作">
 <meta name="twitter:creator" content="@pengcheng789">
 
     
@@ -82,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/09/23/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2017/09/23/jvm/jvm.1.1/" title="JVM 学习日志—— 自动内存管理篇(1)：Java 内存区域" itemprop="url">JVM 学习日志—— 自动内存管理篇(1)：Java 内存区域</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Cai Pengcheng" target="_blank" itemprop="author">Cai Pengcheng</a>
 		
   <p class="article-time">
-    <time datetime="2017-09-23T08:24:13.432Z" itemprop="datePublished"> Published 2017-09-23</time>
+    <time datetime="2017-09-23T13:26:58.000Z" itemprop="datePublished"> Published 2017-09-23</time>
     
   </p>
 </header>
@@ -98,19 +98,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			
 		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<p>Java 语言体系与其他静态编程语言的区别除了在编译时存在差别（Java 源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在 C 或 C++ 中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在 Java 中，这些行为将由 JVM 负责，开发人员不用对内存进行直接操作，这使得内存泄露或内存溢出的问题大为减少。但是，这并不代表问题不会出现，若出现内存泄露或内存溢出的问题时，了解 JVM 的内存机制，对问题进行追踪将不会太过艰难。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -123,7 +115,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://pengcheng789.github.io/2017/09/23/hello-world/" data-title="Hello World | Pengcheng&#39;s Blog" data-tsina="6326929441" class="share clearfix">
+	  <div data-url="https://pengcheng789.github.io/2017/09/23/jvm/jvm.1.1/" data-title="JVM 学习日志—— 自动内存管理篇(1)：Java 内存区域 | Pengcheng&#39;s Blog" data-tsina="6326929441" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -136,14 +128,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/09/23/jvm/jvm.1.1/" title="JVM 学习日志—— 自动内存管理篇(1)：Java 内存区域">
-  <strong>上一篇：</strong><br/>
-  <span>
-  JVM 学习日志—— 自动内存管理篇(1)：Java 内存区域</span>
+
+<div class="next">
+<a href="/2017/09/23/hello-world/"  title="Hello World">
+ <strong>下一篇：</strong><br/> 
+ <span>Hello World
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -156,7 +148,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ 
  
   </div>
 
