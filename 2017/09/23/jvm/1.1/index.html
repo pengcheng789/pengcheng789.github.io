@@ -1,6 +1,6 @@
 
  <!DOCTYPE HTML>
-<html lang="Chinese">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://pengcheng789.github.io/2017/09/23/jvm/1.1/index.html">
 <meta property="og:site_name" content="Pengcheng&#39;s Blog">
 <meta property="og:description" content="Java 语言体系与其他静态编程语言的区别除了在编译时存在差别（Java 源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在 C 或 C++ 中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在 Java 中，这些行为将由 JVM 负责，开发人员不用对内存进行直接操作">
-<meta property="og:locale" content="Chinese">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/jvm/1.1/1.jpg">
 <meta property="og:updated_time" content="2017-09-24T12:43:23.501Z">
 <meta name="twitter:card" content="summary">
@@ -52,7 +52,7 @@
 				<h1 class="site-name"><a href="/" title="Pengcheng&#39;s Blog">Pengcheng&#39;s Blog</a></h1>
 				<h2 class="blog-motto">Simple, efficient and enjoy life</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -68,7 +68,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:pengcheng789.github.io">
 					</form>
 					
@@ -91,14 +91,14 @@
 		<a href="/about" title="Cai Pengcheng" target="_blank" itemprop="author">Cai Pengcheng</a>
 		
   <p class="article-time">
-    <time datetime="2017-09-23T14:43:49.000Z" itemprop="datePublished"> Published 2017-09-23</time>
+    <time datetime="2017-09-23T14:43:49.000Z" itemprop="datePublished"> 发表于 2017-09-23</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内存区域划分"><span class="toc-number">1.</span> <span class="toc-text">内存区域划分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法区-Method-Area"><span class="toc-number">1.1.</span> <span class="toc-text">方法区(Method Area)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆-Heap"><span class="toc-number">1.2.</span> <span class="toc-text">堆(Heap)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序计数器-Program-Counter-Register"><span class="toc-number">1.3.</span> <span class="toc-text">程序计数器(Program Counter Register)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟机栈-VM-Stack"><span class="toc-number">1.4.</span> <span class="toc-text">虚拟机栈(VM Stack)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地方法栈-Native-Stack"><span class="toc-number">1.5.</span> <span class="toc-text">本地方法栈(Native Stack)</span></a></li></ol></li></ol>
 		
@@ -159,22 +159,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内存区域划分"><span class="toc-number">1.</span> <span class="toc-text">内存区域划分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法区-Method-Area"><span class="toc-number">1.1.</span> <span class="toc-text">方法区(Method Area)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆-Heap"><span class="toc-number">1.2.</span> <span class="toc-text">堆(Heap)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序计数器-Program-Counter-Register"><span class="toc-number">1.3.</span> <span class="toc-text">程序计数器(Program Counter Register)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟机栈-VM-Stack"><span class="toc-number">1.4.</span> <span class="toc-text">虚拟机栈(VM Stack)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地方法栈-Native-Stack"><span class="toc-number">1.5.</span> <span class="toc-text">本地方法栈(Native Stack)</span></a></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
 <div class="github-card">
-<p class="asidetitle">Github Card</p>
+<p class="asidetitle">Github 名片</p>
 <div class="github-card" data-github="pengcheng789" data-theme="medium"></div>
 <script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
 </div>
@@ -186,14 +186,8 @@
   
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
-        
-          <li>
-            
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
-            
-          </li>
         
           <li>
             
@@ -208,11 +202,11 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
+  <p class="asidetitle">新浪微博</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=6326929441&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
@@ -469,7 +463,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
