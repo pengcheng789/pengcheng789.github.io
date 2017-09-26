@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,JVM," />
 
 
 
@@ -70,6 +70,7 @@
 
 
 <meta name="description" content="Java语言体系与其他静态编程语言的区别除了在编译时存在差别（Java源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在C或C++中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在Java中，这些行为将由JVM负责，开发人员不用对内存进行直接操作，这使得内存泄露或内">
+<meta name="keywords" content="Java,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM学习日志——自动内存管理篇（1）：Java内存区域">
 <meta property="og:url" content="https://pengcheng789.github.io/2017/09/23/jvm/1.1/index.html">
@@ -77,7 +78,7 @@
 <meta property="og:description" content="Java语言体系与其他静态编程语言的区别除了在编译时存在差别（Java源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在C或C++中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在Java中，这些行为将由JVM负责，开发人员不用对内存进行直接操作，这使得内存泄露或内">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/jvm/1.1/1.jpg">
-<meta property="og:updated_time" content="2017-09-26T07:00:20.579Z">
+<meta property="og:updated_time" content="2017-09-26T07:37:43.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM学习日志——自动内存管理篇（1）：Java内存区域">
 <meta name="twitter:description" content="Java语言体系与其他静态编程语言的区别除了在编译时存在差别（Java源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在C或C++中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在Java中，这些行为将由JVM负责，开发人员不用对内存进行直接操作，这使得内存泄露或内">
@@ -188,6 +189,26 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -312,19 +333,30 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/23/jvm/1.1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/23/jvm/1.1/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -372,22 +404,22 @@
 <li>线程隔离数据区</li>
 </ul>
 <p>如上图所示，线程共享数据区有两个内存区域（方法区和堆），线程隔离数据区则有三个内存区域（程序计数器、虚拟机栈和本地方法栈）。</p>
-<h2 id="方法区-method-area"><a class="header-anchor" href="#方法区-method-area">null</a>方法区(Method Area)</h2>
+<h2 id="方法区-method-area">方法区(Method Area)</h2>
 <blockquote>
 <p>“它用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 </blockquote>
 <p>这句话概括得很好，对于我来说，对这个的内存区域作用感觉一目了然。</p>
-<h2 id="堆-heap"><a class="header-anchor" href="#堆-heap">null</a>堆(Heap)</h2>
+<h2 id="堆-heap">堆(Heap)</h2>
 <p>堆是Java内存中的大头，在大部分的Java应用中，堆内存是虚拟机管理的内存中最大的一块，在虚拟机启动时创建。它的唯一作用就是存放对象实例，几乎所有的对象实例都会在这里被分配。</p>
-<h2 id="程序计数器-program-counter-register"><a class="header-anchor" href="#程序计数器-program-counter-register">null</a>程序计数器(Program Counter Register)</h2>
+<h2 id="程序计数器-program-counter-register">程序计数器(Program Counter Register)</h2>
 <p>程序计数器是线程隔离的内存区域，随着线程的创建而创建，占用的空间较小。它的作用是</p>
 <blockquote>
 <p>“通过改变这个计数器的值来选取下一条需要执行的字节码指令。”<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 </blockquote>
 <p>Java虚拟机是支持多线程的，在CPU层面上看，JVM的多线程是多条线程按照调度算法轮流使用CPU资源的，因此，从另一条线程切换回来之时，JVM需要知道当前线程已经执行到何处。因为每条线程的执行位置都大不相同，因此，这个内存区域必须是线程隔离的。</p>
-<h2 id="虚拟机栈-vm-stack"><a class="header-anchor" href="#虚拟机栈-vm-stack">null</a>虚拟机栈(VM Stack)</h2>
+<h2 id="虚拟机栈-vm-stack">虚拟机栈(VM Stack)</h2>
 <p>虚拟机栈是Java方法执行的内存模型。方法在执行的时候回创建一个叫<strong>栈帧</strong>的数据结构（它包含着方法必要的描述和属性，以后再学习它）。方法从调用到执行完成，对应着栈帧在虚拟机栈里从入栈到出栈。</p>
-<h2 id="本地方法栈-native-stack"><a class="header-anchor" href="#本地方法栈-native-stack">null</a>本地方法栈(Native Stack)</h2>
+<h2 id="本地方法栈-native-stack">本地方法栈(Native Stack)</h2>
 <p>本地方法栈与虚拟机栈的作用一致，只是对象——虚拟机栈的服务对像是 Java 方法，而本地方法栈的服务对象是本地方法。他们之间的另一个区别是，在 《Java虚拟机规范》中对本地方法栈中方法的数据结构没有作出类似“栈帧”的要求，虚拟机可以自由实现它。</p>
 <hr class="footnotes-sep">
 <section class="footnotes">
@@ -412,6 +444,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/JVM/" rel="tag"># JVM</a>
+          
+        </div>
       
 
       
@@ -444,12 +484,40 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="container"></div>
+      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+      <script>
+      const myTheme = {
+        render(state, instance) {
+          const container = document.createElement('div');
+          container.lang = "en-US";
+          container.className = 'gitment-container gitment-root-container';
+          container.appendChild(instance.renderHeader(state, instance));
+          container.appendChild(instance.renderEditor(state, instance));
+          container.appendChild(instance.renderComments(state, instance));
+          container.appendChild(instance.renderFooter(state, instance));
+          return container;
+        }
+      }
+      function showGitment() {
+        $("#container").attr("style", "").addClass("gitment_container");
+        var gitment = new Gitment({
+          id: window.location.pathname,
+          theme: myTheme,
+          owner: 'pengcheng789',
+          repo: 'pengcheng789.github.io',
+          oauth: {
+            client_id: 'd360d5c50b595cc79f43',
+            client_secret: '47f0082e8e04cb5948c2e94309d94c08c22f398a'
+          }
+        });
+        gitment.render('container');
+      }
+      showGitment();
+      </script>
+
     
   </div>
 
@@ -508,7 +576,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -517,12 +603,64 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pengchneg789" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i></a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:pengcheng789@foxmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i></a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/pengcheng789" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i></a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://stackoverflow.com/users/8424609" target="_blank" title="StackOverflow">
+                  
+                    <i class="fa fa-fw fa-stack-overflow"></i></a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/hui-se-huan-xiang-82" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i></a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/6326929441" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i></a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              更多有趣的东西
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://ls-l.cn" title="康王" target="_blank">康王</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         
@@ -540,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">内存区域划分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法区-method-area"><span class="nav-number">1.1.</span> <span class="nav-text">null方法区(Method Area)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆-heap"><span class="nav-number">1.2.</span> <span class="nav-text">null堆(Heap)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序计数器-program-counter-register"><span class="nav-number">1.3.</span> <span class="nav-text">null程序计数器(Program Counter Register)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机栈-vm-stack"><span class="nav-number">1.4.</span> <span class="nav-text">null虚拟机栈(VM Stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地方法栈-native-stack"><span class="nav-number">1.5.</span> <span class="nav-text">null本地方法栈(Native Stack)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">内存区域划分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法区-method-area"><span class="nav-number">1.1.</span> <span class="nav-text">方法区(Method Area)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆-heap"><span class="nav-number">1.2.</span> <span class="nav-text">堆(Heap)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序计数器-program-counter-register"><span class="nav-number">1.3.</span> <span class="nav-text">程序计数器(Program Counter Register)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机栈-vm-stack"><span class="nav-number">1.4.</span> <span class="nav-text">虚拟机栈(VM Stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地方法栈-native-stack"><span class="nav-number">1.5.</span> <span class="nav-text">本地方法栈(Native Stack)</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -691,26 +829,6 @@
 
   
 
-    
-      <script id="dsq-count-scr" src="https://penblog.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://pengcheng789.github.io/2017/09/23/jvm/1.1/';
-          this.page.identifier = '2017/09/23/jvm/1.1/';
-          this.page.title = 'JVM学习日志——自动内存管理篇（1）：Java内存区域';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://penblog.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
 
 
 
@@ -723,6 +841,10 @@
   
 
 
+
+
+
+  
 
 
 
