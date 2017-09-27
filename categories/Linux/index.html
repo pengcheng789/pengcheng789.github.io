@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java,JVM," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -69,20 +69,16 @@
 
 
 
-<meta name="description" content="Java语言体系与其他静态编程语言除了在编译时存在差别（Java源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在C或C++中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在Java中，这些行为将由JVM负责，开发人员不用对内存进行直接操作，这使得内存泄露或内存溢出">
-<meta name="keywords" content="Java,JVM">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JVM学习日志——自动内存管理篇（1）：Java内存区域">
-<meta property="og:url" content="https://pengcheng789.github.io/2017/09/23/jvm/1.1/index.html">
+<meta name="description" content="Simple, efficient and enjoy life">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pengcheng&#39;s Blog">
+<meta property="og:url" content="https://pengcheng789.github.io/categories/Linux/index.html">
 <meta property="og:site_name" content="Pengcheng&#39;s Blog">
-<meta property="og:description" content="Java语言体系与其他静态编程语言除了在编译时存在差别（Java源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在C或C++中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在Java中，这些行为将由JVM负责，开发人员不用对内存进行直接操作，这使得内存泄露或内存溢出">
+<meta property="og:description" content="Simple, efficient and enjoy life">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/jvm/1.1/1.jpg">
-<meta property="og:updated_time" content="2017-09-26T12:58:13.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JVM学习日志——自动内存管理篇（1）：Java内存区域">
-<meta name="twitter:description" content="Java语言体系与其他静态编程语言除了在编译时存在差别（Java源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在C或C++中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在Java中，这些行为将由JVM负责，开发人员不用对内存进行直接操作，这使得内存泄露或内存溢出">
-<meta name="twitter:image" content="http://owqmfrk1c.bkt.clouddn.com/image/jvm/1.1/1.jpg">
+<meta name="twitter:title" content="Pengcheng&#39;s Blog">
+<meta name="twitter:description" content="Simple, efficient and enjoy life">
 
 
 
@@ -112,13 +108,13 @@
 
 
 
-  <link rel="canonical" href="https://pengcheng789.github.io/2017/09/23/jvm/1.1/"/>
+  <link rel="canonical" href="https://pengcheng789.github.io/categories/Linux/"/>
 
 
 
 
 
-  <title>JVM学习日志——自动内存管理篇（1）：Java内存区域 | Pengcheng's Blog</title>
+  <title>分类: Linux | Pengcheng's Blog</title>
   
 
 
@@ -147,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,202 +275,55 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block category">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>Linux<small>分类</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://pengcheng789.github.io/2017/09/23/jvm/1.1/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cai Pengcheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Pengcheng's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2017/09/27/linux/通过Apache-Http-Server代理Tomcat容器/" itemprop="url">
+              
+                <span itemprop="name">通过Apache Http Server代理Tomcat容器</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">JVM学习日志——自动内存管理篇（1）：Java内存区域</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T22:43:49+08:00">
-                2017-09-23
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-27T12:35:00+08:00"
+              content="2017-09-27" >
+          09-27
+        </time>
+      </div>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/23/jvm/1.1/" class="leancloud_visitors" data-flag-title="JVM学习日志——自动内存管理篇（1）：Java内存区域">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>Java语言体系与其他静态编程语言除了在编译时存在差别（Java源码会先被编译成字节码，以实现一次编写，到处运行的特性），还有另一个区别 —— 内存管理机制。在C或C++中，开发人员对内存具有直接管理的权利，他们需要为每一个对象申请所需的空间，又必须在对象弃用后，对内存进行回收，防止内存泄漏或内存溢出。而在Java中，这些行为将由JVM负责，开发人员不用对内存进行直接操作，这使得内存泄露或内存溢出的问题大为减少。但是，这并不代表问题不会出现，若出现内存泄露或内存溢出的问题时，了解JVM的内存机制，对问题进行追踪将不会太过艰难。</p>
-<a id="more"></a>
-<h1>内存区域划分</h1>
-<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/jvm/1.1/1.jpg" alt="Java内存区域划分"></p>
-<p>这是学习JVM内存机制的相当著名的一张图了，根据《Java虚拟机规范》制定的。接下来简要的描述下这张图的信息。</p>
-<p>在JVM运行时的数据区中，共有两大类的运行时数据区，分别为：</p>
-<ul>
-<li>线程共享数据区</li>
-<li>线程隔离数据区</li>
-</ul>
-<p>如上图所示，线程共享数据区有两个内存区域（方法区和堆），线程隔离数据区则有三个内存区域（程序计数器、虚拟机栈和本地方法栈）。</p>
-<h2 id="方法区-method-area">方法区(Method Area)</h2>
-<blockquote>
-<p>“它用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-</blockquote>
-<p>这句话概括得很好，对于我来说，这个内存区域作用一目了然了。</p>
-<h2 id="堆-heap">堆(Heap)</h2>
-<p>堆是Java内存中的大头，在大部分的Java应用中，堆内存是虚拟机管理的内存中最大的一块，在虚拟机启动时创建。它的唯一作用就是存放对象实例，几乎所有的对象实例都会在这里被分配。</p>
-<h2 id="程序计数器-program-counter-register">程序计数器(Program Counter Register)</h2>
-<p>程序计数器是线程隔离的内存区域，随着线程的创建而创建，占用的空间较小。它的作用是</p>
-<blockquote>
-<p>“通过改变这个计数器的值来选取下一条需要执行的字节码指令。”<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-</blockquote>
-<p>Java虚拟机是支持多线程的，在CPU层面上看，JVM的多线程是多条线程按照调度算法轮流使用CPU资源的，因此，从另一条线程切换回来之时，JVM需要知道当前线程已经执行到何处。因为每条线程的执行位置都大不相同，因此，这个内存区域必须是线程隔离的。</p>
-<h2 id="虚拟机栈-vm-stack">虚拟机栈(VM Stack)</h2>
-<p>虚拟机栈是Java方法执行的内存模型。方法在执行的时候会创建一个叫<strong>栈帧</strong>的数据结构（它包含着方法必要的描述和属性，以后再学习它）。方法从调用到执行完成，对应着栈帧在虚拟机栈里从入栈到出栈。</p>
-<h2 id="本地方法栈-native-stack">本地方法栈(Native Stack)</h2>
-<p>本地方法栈与虚拟机栈的作用一致，只是对象——虚拟机栈的服务对像是 Java 方法，而本地方法栈的服务对象是本地方法。他们之间的另一个区别是，在 《Java虚拟机规范》中对本地方法栈中方法的数据结构没有作出类似“栈帧”的要求，虚拟机可以自由实现它。</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>周志明.深入理解Java虚拟机：JVM高级特性与最佳实践[M].2版.北京：机械工业出版社，2013.41-41 <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>周志明.深入理解Java虚拟机：JVM高级特性与最佳实践[M].2版.北京：机械工业出版社，2013.39-39 <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-            <a href="/tags/JVM/" rel="tag"># JVM</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -482,46 +331,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="container"></div>
-      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
-      <!-- <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
-	  <script src="http://blog.geekaholic.cn/js/thirdParty/gitment.browser.min.js"></script>
-      <script>
-      const myTheme = {
-        render(state, instance) {
-          const container = document.createElement('div');
-          container.lang = "en-US";
-          container.className = 'gitment-container gitment-root-container';
-          container.appendChild(instance.renderHeader(state, instance));
-          container.appendChild(instance.renderEditor(state, instance));
-          container.appendChild(instance.renderComments(state, instance));
-          container.appendChild(instance.renderFooter(state, instance));
-          return container;
-        }
-      }
-      function showGitment() {
-        $("#container").attr("style", "").addClass("gitment_container");
-        var gitment = new Gitment({
-          id: window.location.pathname,
-          theme: myTheme,
-          owner: 'pengcheng789',
-          repo: 'pengcheng789.github.io',
-          oauth: {
-            client_id: 'd360d5c50b595cc79f43',
-            client_secret: '47f0082e8e04cb5948c2e94309d94c08c22f398a'
-          }
-        });
-        gitment.render('container');
-      }
-      showGitment();
-      </script>
-
-    
-  </div>
-
 
         </div>
         
@@ -542,17 +351,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -570,7 +370,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -581,7 +381,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -592,7 +392,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -669,22 +469,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">内存区域划分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法区-method-area"><span class="nav-number">1.1.</span> <span class="nav-text">方法区(Method Area)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆-heap"><span class="nav-number">1.2.</span> <span class="nav-text">堆(Heap)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序计数器-program-counter-register"><span class="nav-number">1.3.</span> <span class="nav-text">程序计数器(Program Counter Register)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机栈-vm-stack"><span class="nav-number">1.4.</span> <span class="nav-text">虚拟机栈(VM Stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地方法栈-native-stack"><span class="nav-number">1.5.</span> <span class="nav-text">本地方法栈(Native Stack)</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
