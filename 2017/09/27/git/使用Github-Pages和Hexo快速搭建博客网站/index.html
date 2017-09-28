@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Apache,Tomcat," />
+  <meta name="keywords" content="Github,Github Pages,Hexo,博客网站," />
 
 
 
@@ -69,18 +69,33 @@
 
 
 
-<meta name="description" content="Apache Tomcat（以下简称Tomcat）是一个小巧的Servelet容器，有着占用内存小，运行稳定等特点，在Java Web开发者中很受欢迎，在生产环境中也不少见。但从设计目的和功能用途上来看，Tomcat主要是用来充当解析Servlet的容器，对于线上环境高并发的场景中，显得有点捉襟见肘，影响服务器性能。如果使用在这方面长袖善舞的Apache Http server（以下简称Apach">
-<meta name="keywords" content="Apache,Tomcat">
+<meta name="description" content="这是一篇面向非计算机相关专业人士的文章。">
+<meta name="keywords" content="Github,Github Pages,Hexo,博客网站">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过Apache Http Server代理Tomcat容器">
-<meta property="og:url" content="https://pengcheng789.github.io/2017/09/27/linux/通过Apache-Http-Server代理Tomcat容器/index.html">
+<meta property="og:title" content="使用Github Pages和Hexo快速搭建博客网站">
+<meta property="og:url" content="https://pengcheng789.github.io/2017/09/27/git/使用Github-Pages和Hexo快速搭建博客网站/index.html">
 <meta property="og:site_name" content="Pengcheng&#39;s Blog">
-<meta property="og:description" content="Apache Tomcat（以下简称Tomcat）是一个小巧的Servelet容器，有着占用内存小，运行稳定等特点，在Java Web开发者中很受欢迎，在生产环境中也不少见。但从设计目的和功能用途上来看，Tomcat主要是用来充当解析Servlet的容器，对于线上环境高并发的场景中，显得有点捉襟见肘，影响服务器性能。如果使用在这方面长袖善舞的Apache Http server（以下简称Apach">
+<meta property="og:description" content="这是一篇面向非计算机相关专业人士的文章。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-28T07:33:11.839Z">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/1.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/2.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/3.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/4.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/5.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/6.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/7.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/8.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/9.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/10.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/11.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/12.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/13.png">
+<meta property="og:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/14.png">
+<meta property="og:updated_time" content="2017-09-28T07:31:27.979Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过Apache Http Server代理Tomcat容器">
-<meta name="twitter:description" content="Apache Tomcat（以下简称Tomcat）是一个小巧的Servelet容器，有着占用内存小，运行稳定等特点，在Java Web开发者中很受欢迎，在生产环境中也不少见。但从设计目的和功能用途上来看，Tomcat主要是用来充当解析Servlet的容器，对于线上环境高并发的场景中，显得有点捉襟见肘，影响服务器性能。如果使用在这方面长袖善舞的Apache Http server（以下简称Apach">
+<meta name="twitter:title" content="使用Github Pages和Hexo快速搭建博客网站">
+<meta name="twitter:description" content="这是一篇面向非计算机相关专业人士的文章。">
+<meta name="twitter:image" content="http://owqmfrk1c.bkt.clouddn.com/image/git/1/1.png">
 
 
 
@@ -110,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://pengcheng789.github.io/2017/09/27/linux/通过Apache-Http-Server代理Tomcat容器/"/>
+  <link rel="canonical" href="https://pengcheng789.github.io/2017/09/27/git/使用Github-Pages和Hexo快速搭建博客网站/"/>
 
 
 
 
 
-  <title>通过Apache Http Server代理Tomcat容器 | Pengcheng's Blog</title>
+  <title>使用Github Pages和Hexo快速搭建博客网站 | Pengcheng's Blog</title>
   
 
 
@@ -291,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://pengcheng789.github.io/2017/09/27/linux/通过Apache-Http-Server代理Tomcat容器/">
+    <link itemprop="mainEntityOfPage" href="https://pengcheng789.github.io/2017/09/27/git/使用Github-Pages和Hexo快速搭建博客网站/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cai Pengcheng">
@@ -308,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">通过Apache Http Server代理Tomcat容器</h1>
+          <h1 class="post-title" itemprop="name headline">使用Github Pages和Hexo快速搭建博客网站</h1>
         
 
         <div class="post-meta">
@@ -320,7 +335,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T12:35:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T21:52:00+08:00">
                 2017-09-27
               </time>
             
@@ -343,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -360,7 +375,7 @@
 
           
           
-             <span id="/2017/09/27/linux/通过Apache-Http-Server代理Tomcat容器/" class="leancloud_visitors" data-flag-title="通过Apache Http Server代理Tomcat容器">
+             <span id="/2017/09/27/git/使用Github-Pages和Hexo快速搭建博客网站/" class="leancloud_visitors" data-flag-title="使用Github Pages和Hexo快速搭建博客网站">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,24 +406,112 @@
       
 
       
-        <p><a href="https://tomcat.apache.org/" target="_blank" rel="external">Apache Tomcat</a>（以下简称Tomcat）是一个小巧的Servelet容器，有着占用内存小，运行稳定等特点，在Java Web开发者中很受欢迎，在生产环境中也不少见。但从设计目的和功能用途上来看，Tomcat主要是用来充当解析Servlet的容器，对于线上环境高并发的场景中，显得有点捉襟见肘，影响服务器性能。如果使用在这方面长袖善舞的<a href="http://httpd.apache.org/" target="_blank" rel="external">Apache Http server</a>（以下简称Apache）来充当前端服务器，负责代理转发和均衡负载，则是一个不错的方案。</p>
+        <p>这是一篇面向非计算机相关专业人士的文章。</p>
 <a id="more"></a>
-<h1>配置Apache</h1>
-<p>a. 启用 proxy_module 和 proxy_http_module</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># a2enmod proxy</div><div class="line"></div><div class="line"># a2emod proxy_http</div></pre></td></tr></table></figure>
-<p>b. 创建代理虚拟主机并启用它</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># cd /etc/apache2/site-available</div><div class="line"></div><div class="line"># vi proxy.conf</div><div class="line">    &lt;VirtualHost *:80&gt;</div><div class="line">        ServerName www.mysite.com</div><div class="line">        ServerAlias mysite.com</div><div class="line"></div><div class="line">        ProxyPass /myapp/ http://localhost:8080/myapp/</div><div class="line">        ProxyPassReverse /myapp/ http://localhost:8080/myapp/</div><div class="line">    &lt;/VirtualHost&gt;</div><div class="line"></div><div class="line"># a2ensite proxy.conf</div></pre></td></tr></table></figure>
-<p>c. 重新加载Apache</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># systemctl reload apache2</div></pre></td></tr></table></figure>
-<p>d. 如果加载失败，使用 Apache 提供的命令查询配置文件是否存在错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># apache2ctl -t</div></pre></td></tr></table></figure>
-<h1>配置Tomcat</h1>
-<p>a. 在指定的<code>&lt;Connector&gt;</code>元素中进行恰当的代理设置，该元素一般配置在Tomcat目录下的<code>conf/server.xml</code>中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Connector port=&quot;8080&quot; ...</div><div class="line">    proxyName=&quot;www.mycompany.com&quot;</div><div class="line">    proxyPort=&quot;80&quot;/&gt;</div></pre></td></tr></table></figure>
-<p>b.  重启Tomcat，<code>${CATALINA}</code>是Tomcat目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># $&#123;CATANILA&#125;/bin/catalica.sh stop</div><div class="line"></div><div class="line"># $&#123;CATANILA&#125;/bin/catalica.sh start</div></pre></td></tr></table></figure>
-<h1>完成</h1>
-<p>完成上面的步骤之后，Apache和Tomcat的代理就完成了。发送到80端口的请求将会被转发至8080端口的Tomcat容器进行解析。这看起来似乎跟使用Tomcat单独作为服务器没有什么差别，甚至还多了一步代理转发。其实，整个工作只是完成了一半，配置代理转发是为均衡负载做准备的。当前服务器只有一个Tomcat容器，但一般线上环境不止一个，因此，Apache作为前端服务器处理并发请求，然后根据均衡算法将请求转发至Tomcat容器，可以解决部分并发场景的问题。</p>
+<p>拥有一个低调奢华有内涵的博客应该是很多年轻人觉得比较酷的一件事（这句话瞎编的，只为找个理由写这篇博文）！以我的经验来看，开发一个合格的博客网站，应该要考虑三个地方——UI，博客业务和运行环境。对于不是计算机专业的人们来说，这三个点的实现都阻碍自己开发一个博客的需求。但是！计算机是简化人类工作的，帮助人们更好地生活的，为了照顾不懂计算机知识的人们搭建出自己的博客，各种博客框架涌现出来，著名的莫过于WordPress。但这些框架搭建出来的应用也需要的运行环境，还要花时间去维护这个运行环境，这无疑增加了一点技术难度。但是（又一个但是）,我今天分享的这个由大佬们做出来的东西，完全不用考虑这些！</p>
+<h1>概述</h1>
+<h2 id="github">Github</h2>
+<blockquote>
+<p><a href="https://github.com/" target="_blank" rel="external">Github</a>是一个通过Git进行版本控制的软件源代码托管服务，由GitHub公司（曾称Logical Awesome）的开发者Chris Wanstrath、PJ Hyett和Tom Preston-Werner使用Ruby on Rails编写而成。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+</blockquote>
+<p>Github主要是做代码托管的，一般写代码的都会放几个开源项目上去。这里我们关注的是Github提供的另一个功能——<a href="https://pages.github.com/" target="_blank" rel="external">Gubhub Pages</a>。它能够将你托管在某个特定仓库的代码当作站点文件解析，实现跟浏览网站一样的效果。而这个功能是完全免费的，我们不用去担心博客的运行环境问题了，虽然，我们只能做一个静态的博客网站。</p>
+<h2 id="hexo">Hexo</h2>
+<p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>是使用<a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a>开发的一个强大的博客框架，用于动态生成博客页面。通过Gihub Pages提供的功能，我们有一个静态站点空间，再通过Hexo动态生成页面，这可以简单看成我们拥有一个可管理的博客站点了。</p>
+<h2 id="步骤">步骤</h2>
+<p>因此，我们要做的事情是：</p>
+<ol>
+<li>创建Github Pages需要的仓库</li>
+<li>使用Hexo生成页面</li>
+<li>将页面推送到仓库上</li>
+<li>欣赏自己的成果</li>
+</ol>
+<h1>创建仓库</h1>
+<p>登陆<a href="https://github.com/" target="_blank" rel="external">Github</a>，没有账号可以创建一个，然后<a href="https://github.com/new" target="_blank" rel="external">创建一个新仓库</a>。仓库的名字是有约定的，格式为<code>username.github.io</code>，其中<code>username</code>需要更改为自己的用户名。</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/1.png" alt="创建一个仓库"></p>
+<p>这里的截图因为我已经创建过了，所以它提醒我已经存在这个名字的仓库了。
+这个步骤的关键是仓库的命名不能错了。</p>
+<h1>使用Hexo</h1>
+<h2 id="安装hexo">安装Hexo</h2>
+<p>在安装Hexo之前，需要安装npm，如果已经安装过了，可以直接安装Hexo了。Windows用户和Mac用户可以<a href="https://nodejs.org/en/download/" target="_blank" rel="external">下载</a>官方的安装包，Linux用户可以按照<a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" rel="external">官网指引</a>进行安装。</p>
+<p>安装完npm之后，可以安装Hexo了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<h2 id="创建博客项目">创建博客项目</h2>
+<p>启动命令行，Windows用户可以使用cmd（虽然用起来很别扭），启动方法为<code>Win键</code>+<code>R</code>，然后输入<code>cmd</code>。类Unix用户就不用介绍了。</p>
+<p>选择一个目录存放博客项目，然后进入这个目录（例如在Windows系统下，我选择放在<code>F:\blog\</code>）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; f:</div><div class="line">&gt; cd blog</div></pre></td></tr></table></figure>
+<p>（<code>&gt;</code>表示cmd的标识符，不用输入）</p>
+<p>创建博客项目，<code>init</code>后面跟着这个项目的名字，例如我用<code>myblog</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">F:\blog&gt; hexo init myblog</div><div class="line">F:\blog\myblog&gt; cd myblog</div><div class="line">F:\blog\myblog&gt; npm install</div></pre></td></tr></table></figure>
+<p>依次运行完这三个命令之后，本地博客的框架就搭建完了，可以运行以下命令查看效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">F:\blog\myblog&gt; hexo s</div></pre></td></tr></table></figure>
+<p>然后在浏览器输入<code>http://localhost:4000</code>，即可查看搭建好的博客。</p>
+<h2 id="进行个性化配置">进行个性化配置</h2>
+<p>虽然在本地搭建好了博客，但是在浏览器看了一下成果</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/2.png" alt="博客首页"></p>
+<p>哇！这标题怎么显示“Hexo”，不应该是我自己的标题吗？还有，我不喜欢英文怎么办？并且我还要添加自己的文章！</p>
+<p>如何添加文章下面会说，现在先对首页进行个性化配置。Hexo能够让我们对博客的参数进行配置，这些参数包括但不限于博客的标题，作者的信息，站点的语言，以及一些第三方服务，如数据统计服务，评论服务等。</p>
+<p>首先，我们依据<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a>进行一些配置。用文件管理器打开我们的项目目录，可以看到有以下文件：</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/3.png" alt="Hexo项目结构"></p>
+<p>其中<code>_config.yml</code>是配置文件，我们进行各种参数配置基本上都是在这里进行配置的，其它文件的作用可参考<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">官方文档</a>。</p>
+<p>打开<code>_config.yml</code>文件，Windows用户可以用自带的记事本程序，类Unix用户可以用Vi程序，这里我用的则是Sublime Text。</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/4.png" alt="文件内容"></p>
+<p>这里我们主要对第6行到第11行和第15行进行配置（冒号后面需要一个半角空格）：</p>
+<ul>
+<li><code>title</code>: 网站标题</li>
+<li><code>subtitle</code>: 网站副标题，可以填上自己的个性签名之类的</li>
+<li><code>description</code>: 网站描述，一般做SEO关键字时候用，可以先不管它</li>
+<li><code>author</code>: 作者名字，可以填上我们想要给自己用的名字</li>
+<li><code>language</code>: 站点语言，用中文的话可以填上<code>zh-CN</code></li>
+<li><code>timezone</code>: 时区，在大陆的话，一般是用北京时间，即<code>Asia/Shanghai</code></li>
+<li><code>url</code>: 网站地址，这里我们可以填上之前那个创建的仓库的名字，即<code>username.github.io</code>(<code>username</code>用自己的用户名替换)</li>
+</ul>
+<p>配置好了后大概这样：</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/5.png" alt="初步完成配置"></p>
+<p>然后在命令行界面按<code>Ctrl</code>+<code>C</code>停止Hexo，在输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">F:\blog\myblog&gt; Hexo s</div></pre></td></tr></table></figure>
+<p>启动Hexo，刷新浏览器，</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/6.png" alt="初步配置后的界面"></p>
+<p>可以看到，标题之类的都更改了，侧边栏也是中文显示了，至于<em>Hello World</em>这边英文文章是Hexo自带的，我们可以删掉，并显示自己的文章。</p>
+<h2 id="编写自己的文章">编写自己的文章</h2>
+<p>在博客项目的目录下，进入<code>source</code>目录</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/7.png" alt="选择目录"></p>
+<p>再进入<code>_post</code>目录</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/8.png" alt="进入目录"></p>
+<p>可以发现已经有一个<code>hello-world.md</code>文件了</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/9.png" alt="文件"></p>
+<p>这是Hexo自带的文章，我们可以把它删掉，然后添加一个新的文本文件，并修改名字为<code>第一篇博客.md</code>，文件的后缀名是<code>.md</code></p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/10.png" alt="建立新的文件"></p>
+<p>使用编辑器打开这个文件，并添加以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: 第一篇博客</div><div class="line">date: 2017-9-28 14:30</div><div class="line"></div><div class="line">---</div><div class="line"></div><div class="line">这是我的第一篇博客:)</div></pre></td></tr></table></figure>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/11.png" alt="文件内容"></p>
+<p>这是<a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">Markdown</a>语法，Hexo的文章编写都是使用这种语法的。<code>title</code>是文章的标题，<code>date</code>是文章的日期，它们和正文之间使用一行<code>---</code>进行隔离，最上面一行<code>---</code>可有可无。</p>
+<p>添加完成后，保存，然后重新刷新浏览器，即可看到自己的文章了。</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/12.png" alt="自己的博客文章"></p>
+<h1>推送至Github仓库</h1>
+<p>到以上的步骤为止，已经搭好了本地的博客，这些只能再本地访问的，在别人的电脑上可访问不了，怎么像访问<code>baidu.com</code>这样别人也可以访问自己的博客呢？</p>
+<p>答案是使用我们第一步创建的仓库，具体步骤如下。</p>
+<h2 id="进行hexo的git配置">进行Hexo的Git配置</h2>
+<h3 id="安装hexo-deployer-git">安装hexo-deployer-git</h3>
+<p>在命令行进入博客项目的目录，运行一下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">F:\blog\myblog&gt; npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>按照<a href="https://hexo.io/zh-cn/docs/deployment.html#Git" target="_blank" rel="external">官方文档</a>，打开<code>_config.yml</code>文件，翻到最后几行，如图：</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/13.png" alt="最后几行内容"></p>
+<p>编辑红框的内容为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/username/username.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>其中两处的<code>username</code>更改为自己的Github用户名，修改后如图</p>
+<p><img src="http://owqmfrk1c.bkt.clouddn.com/image/git/1/14.png" alt="修改后"></p>
+<p>保存文件，然后在命令行界面进入博客项目的目录，运行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">F:\blog\myblog&gt; hexo d -g</div></pre></td></tr></table></figure>
+<p>等待Hexo把项目推送至Github仓库，期间可能会请求Github的账号和密码，填写进去即可，当上传完成之后，即可在浏览器输入<code>http://username.github.io</code>浏览自己的博客，<code>username</code>用自己的Github用户名进行替换，当然，也可以将链接分享给小伙伴们浏览。</p>
+<h1>更多的配置</h1>
+<p>Hexo提供的功能还有很多，比如接入第三方的站内搜索服务，主题支持等，推荐浏览<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo官网</a>文档，获取更多的信息。如果对Git和Github有兴趣，则推荐<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的Git教程</a>。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>维基百科编者. GitHub[G/OL]. 维基百科, 2017(20170919)[2017-09-19]. <a href="https://zh.wikipedia.org/w/index.php?title=GitHub&amp;oldid=46255213" target="_blank" rel="external">https://zh.wikipedia.org/w/index.php?title=GitHub&amp;oldid=46255213</a>. <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 
       
     </div>
@@ -426,9 +529,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Apache/" rel="tag"># Apache</a>
+            <a href="/tags/Github/" rel="tag"># Github</a>
           
-            <a href="/tags/Tomcat/" rel="tag"># Tomcat</a>
+            <a href="/tags/Github-Pages/" rel="tag"># Github Pages</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/博客网站/" rel="tag"># 博客网站</a>
           
         </div>
       
@@ -441,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/23/java/JVM学习日志——自动内存管理篇（1）：Java内存区域/" rel="next" title="JVM学习日志——自动内存管理篇（1）：Java内存区域">
-                <i class="fa fa-chevron-left"></i> JVM学习日志——自动内存管理篇（1）：Java内存区域
+              <a href="/2017/09/27/linux/通过Apache-Http-Server代理Tomcat容器/" rel="next" title="通过Apache Http Server代理Tomcat容器">
+                <i class="fa fa-chevron-left"></i> 通过Apache Http Server代理Tomcat容器
               </a>
             
           </div>
@@ -450,10 +557,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/27/git/使用Github-Pages和Hexo快速搭建博客网站/" rel="prev" title="使用Github Pages和Hexo快速搭建博客网站">
-                使用Github Pages和Hexo快速搭建博客网站 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -678,7 +781,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">配置Apache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">配置Tomcat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">完成</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#github"><span class="nav-number">1.1.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">1.2.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">1.3.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">使用Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">3.1.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建博客项目"><span class="nav-number">3.2.</span> <span class="nav-text">创建博客项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行个性化配置"><span class="nav-number">3.3.</span> <span class="nav-text">进行个性化配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写自己的文章"><span class="nav-number">3.4.</span> <span class="nav-text">编写自己的文章</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">推送至Github仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进行hexo的git配置"><span class="nav-number">4.1.</span> <span class="nav-text">进行Hexo的Git配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo-deployer-git"><span class="nav-number">4.1.1.</span> <span class="nav-text">安装hexo-deployer-git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">更多的配置</span></a></li></ol></div>
             
 
           </div>
